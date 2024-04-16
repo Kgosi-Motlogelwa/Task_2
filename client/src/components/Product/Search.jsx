@@ -42,13 +42,7 @@ function ProductSearch({ handleFilter }) {
 
           {/* Category */}
           <div className="flex items-center space-x-4 md:space-x-2">
-            <div className="w-72 z-50">
-              <Field name="category">
-                {({ field, form }) => (
-                  <Select field={field} form={form} items={categories} />
-                )}
-              </Field>
-            </div>
+            
 
             <Button
               tupe="submit"

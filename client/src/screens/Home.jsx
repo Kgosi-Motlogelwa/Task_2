@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/client';
 
 import { GET_PRODUCTS } from '@/graphql/queries';
 import ProductSearch from '@/components/Product/Search';
-import ProductLatest from '@/components/Product/Latest';
 import Button from '@/components/UI/Button';
 import { addItem } from '@/components/Cart/cart-helpers';
 
@@ -44,13 +43,13 @@ function ScreensHome() {
   };
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 mx-4 lg:mx-8 py-5">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12 mx-4 lg:mx-8 py-5">
       <div className="lg:col-span-2">
         {/* search  */}
         <ProductSearch handleFilter={setFilter} />
 
         {/* List Product */}
-        <div className="mt-10">
+        <div className="mt-12">
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-4">
             {products.map((product, index) => (
               <div
@@ -106,7 +105,6 @@ function ScreensHome() {
         {/* ./ List Products */}
       </div>
 
-      <ProductLatest />
     </section>
   );
 }
