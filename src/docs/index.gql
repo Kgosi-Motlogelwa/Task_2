@@ -1,0 +1,243 @@
+query LOGIN_USER {
+  login(email: "jhon2@doe.io", password: "jhon12345") {
+    token
+  }
+}
+
+query GET_USERS {
+  getUsers {
+    _id
+    name
+  }
+}
+
+mutation UPDATE_ME {
+  updateMe(name: "jhon doe", email: "jhon@doe.io", seller: false) {
+    _id
+    name
+    email
+    seller
+  }
+}
+
+mutation DELETE_ME {
+  deleteMe {
+    _id
+    name
+    email
+    seller
+  }
+}
+
+mutation REGISTER_USER {
+  register(
+    name: "Jhon Doe 2"
+    email: "jhon2@doe.io"
+    password: "jhon12345"
+    confirmPassword: "jhon12345"
+  ) {
+    message
+    token
+    user {
+      _id
+      name
+      email
+    }
+  }
+}
+
+query GET_SHOPS {
+  getShops {
+    _id
+    name
+    image
+    description
+    owner {
+      _id
+      name
+    }
+  }
+}
+
+query GET_SHOP {
+  getShop(shopId: "6084a7ebb9350c27f40cacde") {
+    _id
+    name
+    image
+    description
+    owner {
+      _id
+      name
+    }
+  }
+}
+
+mutation CREATE_SHOP {
+  createShop(
+    shop: {
+      name: "new shop 2"
+      description: "This is the description of new shop"
+    }
+  ) {
+    _id
+    name
+    image
+    description
+    owner {
+      _id
+      name
+    }
+  }
+}
+
+mutation UPDATE_SHOP {
+  updateShop(
+    shopId: "6084a81bb9350c27f40cacdf"
+    shop: {
+      name: "new shop"
+      description: "This is the description of new shop"
+    }
+  ) {
+    _id
+    name
+    image
+    description
+    owner {
+      _id
+      name
+    }
+  }
+}
+
+mutation DELETE_SHOP {
+  deleteShop(shopId: "6084a7ebb9350c27f40cacde") {
+    _id
+    name
+    image
+    description
+    owner {
+      _id
+      name
+    }
+  }
+}
+
+mutation CREATE_PRODUCT {
+  createProduct(
+    shopId: "6084a7ebb9350c27f40cacde"
+    product: {
+      name: "new product 2"
+      description: "This is description of product"
+      category: "new category 2"
+      quantity: 50
+      price: 12.99
+    }
+  ) {
+    _id
+    name
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+mutation UPDATE_PRODUCT {
+  updateProduct(
+    productId: "6085e542d2f4152bbc7555bc"
+    product: {
+      name: "new product"
+      description: "This is description of product"
+      category: "new category"
+      quantity: 50
+      price: 12.99
+    }
+  ) {
+    _id
+    name
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+mutation DELETE_PRODUCT {
+  deleteProduct(productId: "6085e51303030f081c56ad15") {
+    _id
+    name
+  }
+}
+
+query GET_PRODUCTS {
+  getProducts {
+    _id
+    name
+    category
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+query GET_PRODUCT {
+  getProduct(productId: "6085e542d2f4152bbc7555bc") {
+    _id
+    name
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+query LIST_LATEST_PRODUCTS {
+  listLatestProducts {
+    _id
+    name
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+query LIST_RELATED_PRODUCTS {
+  listRelatedProducts(productId: "6085e542d2f4152bbc7555bc") {
+    _id
+    name
+    shop {
+      _id
+      name
+      owner {
+        _id
+        name
+      }
+    }
+  }
+}
+
+query LIST_CATEGORIES {
+  listCategories
+}

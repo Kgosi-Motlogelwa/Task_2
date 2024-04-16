@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  button:focus,
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+
+  ul[role='listbox']::-webkit-scrollbar {
+    @apply bg-transparent w-1.5;
+  }
+
+  ul[role='listbox']::-webkit-scrollbar-thumb {
+    @apply bg-dark-light rounded-full;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
